@@ -87,8 +87,10 @@ begin
   CheckEquals(Int64($FFFFFFFFC0000000), decodeZigZag64($000000007FFFFFFF));
   CheckEquals(Int64($000000007FFFFFFF), decodeZigZag64($00000000FFFFFFFE));
   CheckEquals(Int64($FFFFFFFF80000000), decodeZigZag64($00000000FFFFFFFF));
+  {$WARNINGS OFF}
   CheckEquals(Int64($7FFFFFFFFFFFFFFF), decodeZigZag64($FFFFFFFFFFFFFFFE));
   CheckEquals(Int64($8000000000000000), decodeZigZag64($FFFFFFFFFFFFFFFF));
+  {$WARNINGS ON}
 end;
 
 procedure TestProtoBufRawIO.TestEncodeDecodeZigZag;

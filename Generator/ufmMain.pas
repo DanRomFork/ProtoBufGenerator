@@ -19,7 +19,9 @@ type
   TfmMain = class(TForm)
     edProtoFileName: TEdit;
     btnOpenProtoFile: TButton;
+    {$WARNINGS OFF}
     odProtoFile: TFileOpenDialog;
+    {$WARNINGS ON}
     btnGenerate: TButton;
     edOutputFolder: TEdit;
     btnChooseOutputFolder: TButton;
@@ -43,7 +45,9 @@ implementation
 uses
   System.IOUtils,
   System.IniFiles,
+  {$WARNINGS OFF}
   Vcl.FileCtrl,
+  {$WARNINGS ON}
   uProtoBufGenerator;
 
 {$R *.dfm}
